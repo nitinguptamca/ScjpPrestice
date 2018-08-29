@@ -8,6 +8,8 @@ public class ConsumerDemo {
 
   static class Name {
     String name;
+    static String staticname;
+    static final String sFString="nk";
 
     Name(String nm) {
       name = nm;
@@ -16,6 +18,13 @@ public class ConsumerDemo {
     void setName(String nm) {
       name = nm;
     }
+    void setName2323(String nm) {
+        name = nm;
+      }
+    void setName23232322323(String nm) {
+        name = nm;
+      }
+    
 
     public String toString() {
       return name;

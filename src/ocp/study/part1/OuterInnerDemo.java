@@ -2,7 +2,9 @@ package ocp.study.part1;
 
 public class OuterInnerDemo {
 
-  private String out;
+ 
+private static StaticInner StaticInner;
+private String out;
 
   public class Inner {
     private String in;
@@ -30,6 +32,7 @@ public class OuterInnerDemo {
       class StaticInnerInner {
         // Compile error: Inner class cannot have static declarations
 //    static int x = 10;
+    	  int a=100;
       }
     }
   }
@@ -37,5 +40,7 @@ public class OuterInnerDemo {
   public static void main(String[] args) {
     OuterInnerDemo.Inner inner = new OuterInnerDemo().new Inner();
     inner.in = "Hello";
+    OuterInnerDemo.StaticInner  staticInner=OuterInnerDemo.StaticInner;
+    staticInner.doIt();
   }
 }

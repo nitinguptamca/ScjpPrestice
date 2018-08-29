@@ -11,7 +11,7 @@ public class StreamsDemo {
   private static void intermediateOperations() {
     System.out.println("\n*** Intermediate OPERATIONS ***");
     List<String> list = Arrays.asList("Java", "isa", "isa", "so", "great");
-    list.stream().filter(s -> s.contains("a")).map(String::toLowerCase).forEach(System.out::println);
+    list.stream().filter(s -> s.contains("a")).map(String::toUpperCase).forEach(System.out::println);
 
     // Note distinct is a INTERMEDIATE OP
     System.out.println("Number of distinct elements : " + list.stream().distinct().count());
@@ -27,7 +27,7 @@ public class StreamsDemo {
     System.out.println("\nTerminal with collect");
     Stream<String> words = Stream.of("lower", "case", "text");
     List<String> list2 = words
-        .peek(s -> System.out.println(s))
+        .peek(s -> System.out.print("  "+s))
         .map(s -> s.toUpperCase())
         .collect(Collectors.toList());
     System.out.println(list2);

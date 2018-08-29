@@ -1,9 +1,13 @@
 package ocp.study.part2;
 
-import ocp.study.Person;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.function.Supplier;
+
+import ocp.study.Person;
 
 public class MethodReferences {
 
@@ -37,6 +41,15 @@ public class MethodReferences {
     Arrays.sort(persons, Person::compareByName);
     System.out.println(Arrays.toString(persons));
   }
+
+  void typeInstanceMethod(Person[] persons) {
+	    // See the syntax of Person::compareByName
+//	        public int compareByName(Person b) {
+//	            return getName().compareTo(b.getName());
+//	        }
+	    Arrays.sort(persons, Person::compareByName);
+	    System.out.println(Arrays.toString(persons));
+	  }
 
   static void constructorReference(List<Person> persons) {
     Set<Person> rosterSetLambda = transferElements(persons, () -> {

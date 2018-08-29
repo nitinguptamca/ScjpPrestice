@@ -9,22 +9,22 @@ import java.util.stream.Stream;
 
 public class FilesDemo {
 
-  private static String ROOT_DIR = "s:/tmp";
+  private static String ROOT_DIR = "C:\\Users\\nitin\\AppData\\Local\\Temp";
 
   static void files() throws IOException {
     System.out.println("--> List output:");
     // list(...)
     Files.list(Paths.get(ROOT_DIR))
-        .filter(p -> p.toString().contains("sh"))
+        .filter(p -> p.toString().contains("a"))
         .forEach(System.out::println);
 
     System.out.println("--> Walk output:");
     Files.walk(Paths.get(ROOT_DIR), 3, FileVisitOption.FOLLOW_LINKS)
-        .filter(p -> p.toString().contains("ai"))
+        .filter(p -> p.toString().contains("a"))
         .forEach(System.out::println);
 
     System.out.println("--> find output:");
-    try (Stream<Path> p3 = Files.find(Paths.get(ROOT_DIR), 3, (path, attr) -> (path.toString().contains("ail")))){
+    try (Stream<Path> p3 = Files.find(Paths.get(ROOT_DIR), 3, (path, attr) -> (path.toString().contains("a")))){
       p3.forEach(System.out::println);
     }
 

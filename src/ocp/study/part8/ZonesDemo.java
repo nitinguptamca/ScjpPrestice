@@ -8,7 +8,7 @@ public class ZonesDemo {
 
   static void zonedemo() {
     Set<String> allZones = ZoneId.getAvailableZoneIds();
-//    allZones.stream().forEach(System.out::println);
+    allZones.stream().forEach(System.out::println);
 
     LocalDateTime ldt = LocalDateTime.now();
 

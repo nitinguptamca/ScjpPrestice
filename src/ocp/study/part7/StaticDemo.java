@@ -23,7 +23,8 @@ public class StaticDemo {
     default void doSomething() {
       System.out.println("I - Two: Do something");
     }
-
+    //Its perfect to define DoIt again.
+    void doIt();
     // doSomething2 is now abstract..you cant get the default impl now
     void doSomething2();
 

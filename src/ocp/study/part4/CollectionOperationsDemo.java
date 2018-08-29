@@ -28,7 +28,7 @@ public class CollectionOperationsDemo {
   }
 
   private static void allMatch() {
-    List<Employee> employees = Arrays.asList(new Employee("Jack"), new Employee("Jill"), new Employee("Jiane"));
+    List<Employee> employees = Arrays.asList(new Employee("Jack"), new Employee("jill"), new Employee("Jiane"));
     Stream<Employee> emps = employees.stream();
 
     boolean result = emps.allMatch(s -> s.getName().startsWith("J"));

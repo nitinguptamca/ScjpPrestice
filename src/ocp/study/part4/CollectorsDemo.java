@@ -44,7 +44,7 @@ public class CollectorsDemo {
   private static void partitionBy() {
     System.out.println("\npartitionBy");
     Stream<Employee> emps = Stream.of(new Employee("John", "Sales"), new Employee("Bob", "Engg"),
-        new Employee("Alice", "Engg"), new Employee("Janett", "Sales"));
+        new Employee("Alice", "Engg"), new Employee("Janett", "Sales") ,new Employee("Janett", "Engg"));
 
     Map<Boolean, List<Employee>> deptCat =
         emps.collect(Collectors.partitioningBy(e -> e.getDepartment().getDept().startsWith("E")));

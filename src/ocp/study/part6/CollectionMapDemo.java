@@ -26,6 +26,8 @@ public class CollectionMapDemo {
     System.out.println("\nIterator forEachRemaining");
     List<String> list = new ArrayList<>(Arrays.asList("A", "B", "AB", "AC", "Z"));
     list.iterator().forEachRemaining(System.out::println);
+    System.out.println();
+    list.stream().forEach(System.out::println);
   }
 
   static void map() {
@@ -59,6 +61,7 @@ public class CollectionMapDemo {
     List<String> list = Arrays.asList("Zello Some", "New Some", "Thing New", "zGood");
     List<String> list2 = list.stream()
         .flatMap(e -> Stream.of(e.split(" ")))
+    	//	.map(e -> Stream.of(e.split(" ")))
         .peek(s -> System.out.println(s + " "))
         .distinct()
         .sorted()
